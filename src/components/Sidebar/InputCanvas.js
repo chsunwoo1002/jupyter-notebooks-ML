@@ -101,6 +101,8 @@ const InputCanvas = (props) => {
       context.stroke();
     }
   };
+
+  props.currentDrawing(canvasRef.current);
   return <canvas className="input" ref={canvasRef}></canvas>;
 };
 
