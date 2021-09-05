@@ -24,10 +24,16 @@ const SidebarContainer = (props) => {
     }
     const ctx = drawing.getContext("2d");
     let canvasData = ctx.getImageData(0, 0, drawing.width, drawing.height);
-    // for (let i = 3; i < canvasData.width; i++){
-    //   for (let j = )
-    // }
-    console.log(canvasData);
+    let arr = [];
+    for (let h = 0; h < canvasData.height; h++) {
+      let tmp = [];
+      for (let w = 0; w < canvasData.width; w++) {
+        tmp.push(canvasData.data[h * canvasData.width + w * 4 + 3]);
+      }
+      arr.push(tmp);
+    }
+
+    props.inputHandler(arr);
   };
   return (
     <div className="sidebar">
