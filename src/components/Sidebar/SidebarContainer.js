@@ -36,7 +36,7 @@ const SidebarContainer = (props) => {
     props.inputHandler(arr);
   };
   return (
-    <div className="sidebar">
+    <div>
       <InputCanvas currentDrawing={getCanvas} />
       <Button onClick={parsingCanvas}>Go</Button>
       <Button onClick={clearDrawing}>Reset</Button>
